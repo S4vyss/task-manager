@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="added header">
-      <change afterPath="$PROJECT_DIR$/NOTES.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/main/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="api works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/AppBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/AppBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/api/examples.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/api/projects.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/trpc/router/_app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/trpc/router/_app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/trpc/router/example.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/trpc/router/projectsRouter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/api/projects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/api/projects.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +54,7 @@
       <workItem from="1673615815814" duration="5278000" />
       <workItem from="1673627393645" duration="1571000" />
       <workItem from="1673688134038" duration="2797000" />
-      <workItem from="1673785474662" duration="2401000" />
+      <workItem from="1673785474662" duration="2639000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1672673701029</created>
@@ -80,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672677447972</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="api works">
+      <created>1673788136509</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673788136509</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,6 +86,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="added header" />
-    <option name="LAST_COMMIT_MESSAGE" value="added header" />
+    <MESSAGE value="api works" />
+    <option name="LAST_COMMIT_MESSAGE" value="api works" />
   </component>
 </project>
