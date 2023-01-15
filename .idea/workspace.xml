@@ -5,20 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="added header">
-      <change afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/NOTES.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/AppBar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/index.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/main/Main.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/env/schema.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/src/env/schema.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/api/auth/[...nextauth].ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/api/auth/[...nextauth].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/AppBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/AppBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/api/examples.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/api/projects.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/trpc/router/_app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/trpc/router/_app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/trpc/router/example.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/trpc/router/projectsRouter.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,22 +34,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "\\\\wsl$\\Ubuntu\\home\\s4vyss\\Projekty\\fullstack\\task-manager\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;\\\\wsl$\\Ubuntu\\home\\s4vyss\\Projekty\\fullstack\\task-manager\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -60,7 +58,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1672673485553</updated>
-      <workItem from="1672673488935" duration="3825000" />
+      <workItem from="1672673488935" duration="3886000" />
+      <workItem from="1673261255200" duration="4594000" />
+      <workItem from="1673533860551" duration="3509000" />
+      <workItem from="1673615815814" duration="5278000" />
+      <workItem from="1673627393645" duration="1571000" />
+      <workItem from="1673688134038" duration="2797000" />
+      <workItem from="1673785474662" duration="2401000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1672673701029</created>
@@ -69,7 +73,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672673701029</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added header">
+      <created>1672677447972</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1672677447972</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
