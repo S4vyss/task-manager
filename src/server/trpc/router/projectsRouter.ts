@@ -17,9 +17,9 @@ export const projectsRouter = router({
   createProject: publicProcedure
     .input(z.object({
       title: z.string(),
-      userId: z.string()
+      userId: z.optional(z.string())
     }))
-    .query(({ input, ctx}) => {
+    .mutation(({ input, ctx}) => {
       return ctx.prisma.project.create({
         data: {
           title: input.title,
@@ -32,14 +32,14 @@ export const projectsRouter = router({
       })
     }),
   deleteProject: publicProcedure
-    .input(z.object({ projectId: z.string().optional()}))
-    .query(({ input, ctx}) => {
-      if (input.projectId) {
-        return ctx.prisma.project.delete({
-          where: {
-            id: input.projectId
-          }
-        })
-      }
+    .input(z.string())
+    .mutation(({ input, ctx}) => {
+      return ctx.prisma.project.delete({
+        where: {
+          id: input
+        }
+      })
     })
 });
+
+// TODO: change delete and create project to be mutation not query
