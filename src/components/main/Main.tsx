@@ -1,9 +1,8 @@
-import {ReactElement, useEffect, useState} from "react";
+import {ReactElement, useState} from "react";
 import Container from "@mui/material/Container";
 import { trpc } from "../../utils/trpc";
 import { useSession } from "next-auth/react";
 import Box from "@mui/material/Box";
-import ListComponent from "./List";
 import {List, ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
 import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -11,6 +10,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 export default function Main(): ReactElement {
 
   const { data: sessionData } = useSession();
+  const [title, setTitle] = useState<string>("");
 
   // getting all projects
   const projects = trpc.project.getProjects.useQuery(sessionData?.user?.id)
@@ -20,6 +20,18 @@ export default function Main(): ReactElement {
 
   // create new project
   const createProject = trpc.project.createProject.useMutation().mutateAsync;
+
+  const handleCreate = async (e: any) => {
+    e.preventDefault();
+    await createProject({ title: title, userId: sessionData?.user?.id });
+    await projects.refetch();
+    setTitle("");
+  }
+
+  const handleDelete = async (projectId: string) => {
+    await deleteProject(projectId);
+    await projects.refetch();
+  }
 
   return (
     <Container sx={{ marginLeft: 0}}>
@@ -43,11 +55,7 @@ export default function Main(): ReactElement {
                         sx={{ maxWidth: "fit-content" }}
 
                       >
-                        <ListItemIcon sx={{ minWidth: "fit-content" }} onClick={ async () => {
-                          await deleteProject(project.id);
-                          projects.refetch();
-                        }
-                        }>
+                        <ListItemIcon sx={{ minWidth: "fit-content" }} onClick={() => handleDelete(project.id)}>
                           <DeleteIcon />
                         </ListItemIcon>
                       </ListItemButton>
@@ -60,14 +68,15 @@ export default function Main(): ReactElement {
       <h1>
         Create project dev
       </h1>
-      <button
-        onClick={async () => {
-          await createProject({ title: "siema", userId: sessionData?.user?.id });
-          projects.refetch();
-        }}
-      >
-        Create
-      </button>
+      <form onSubmit={handleCreate}>
+        <Box sx={{ display: "flex", flexDirection: "column", maxWidth: "300px" }}>
+          <label htmlFor="title">Type title:</label>
+          <input type="text" value={title} onChange={(e: any) => setTitle(e.target.value)} />
+        </Box>
+        <button type="submit">
+          Create
+        </button>
+      </form>
     </Container>
   )
 }
