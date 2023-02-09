@@ -3,6 +3,10 @@ import Container from "@mui/material/Container";
 import { trpc } from "../../utils/trpc";
 import { useSession } from "next-auth/react";
 import Box from "@mui/material/Box";
+import ListComponent from "./List";
+import {List, ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
+import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function Main(): ReactElement {
 
@@ -18,25 +22,40 @@ export default function Main(): ReactElement {
   const createProject = trpc.project.createProject.useMutation().mutateAsync;
 
   return (
-    <Container>
+    <Container sx={{ marginLeft: 0}}>
       {
         projects.data &&
-        <ul>
-          {projects.data.map(project => {
-            return (
-              <Box sx={{ display: "flex", gap: 4 }} key={project.id}>
-                <li key={project.id}>
-                  {project.title}
-                </li>
-                <button onClick={async () => {
-                    await deleteProject(project.id);
-                    projects.refetch();
-                  }
-                }>X</button>
-              </Box>
-            )
-          })}
-        </ul>
+          <>
+              <List component="nav">
+                {projects.data.map(project => {
+                  return (
+                    <Box sx={{ display: "flex" }} key={project.id}>
+                      <ListItemButton
+                        key={project.id}
+                        sx={{ maxWidth: "fit-content", display: "flex", gap: 1 }}
+                      >
+                        <ListItemIcon sx={{ minWidth: "fit-content" }}>
+                          <AutoAwesomeMosaicIcon />
+                        </ListItemIcon>
+                        <ListItemText primary={project.title} />
+                      </ListItemButton>
+                      <ListItemButton
+                        sx={{ maxWidth: "fit-content" }}
+
+                      >
+                        <ListItemIcon sx={{ minWidth: "fit-content" }} onClick={ async () => {
+                          await deleteProject(project.id);
+                          projects.refetch();
+                        }
+                        }>
+                          <DeleteIcon />
+                        </ListItemIcon>
+                      </ListItemButton>
+                    </Box>
+                  )
+                })}
+              </List>
+          </>
       }
       <h1>
         Create project dev
