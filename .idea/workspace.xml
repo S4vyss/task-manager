@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="added form for creating projects">
-      <change beforePath="$PROJECT_DIR$/src/components/header/AppBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/AppBar.tsx" afterDir="false" />
+    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="changed logo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +63,8 @@
       <workItem from="1675606769969" duration="6404000" />
       <workItem from="1675698361238" duration="3000" />
       <workItem from="1675698435329" duration="462000" />
-      <workItem from="1675955642713" duration="2093000" />
+      <workItem from="1675955642713" duration="2246000" />
+      <workItem from="1676124484169" duration="3444000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1672673701029</created>
@@ -112,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675959868375</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="changed logo">
+      <created>1675960073419</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1675960073419</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +146,7 @@
     <MESSAGE value="changed from query to mutation" />
     <MESSAGE value="little styling" />
     <MESSAGE value="added form for creating projects" />
-    <option name="LAST_COMMIT_MESSAGE" value="added form for creating projects" />
+    <MESSAGE value="changed logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed logo" />
   </component>
 </project>

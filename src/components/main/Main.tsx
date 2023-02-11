@@ -6,6 +6,9 @@ import Box from "@mui/material/Box";
 import {List, ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
 import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
 import DeleteIcon from '@mui/icons-material/Delete';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import FormControl from '@mui/material/FormControl';
 
 export default function Main(): ReactElement {
 
@@ -34,11 +37,11 @@ export default function Main(): ReactElement {
   }
 
   return (
-    <Container sx={{ marginLeft: 0}}>
+    <Container sx={{ marginLeft: 0, display: "flex", flexWrap: "wrap"}} style={{ maxWidth: "100%", flex: "1 1 auto"}}>
       {
         projects.data &&
           <>
-              <List component="nav">
+              <List component="nav" sx={{ flexGrow: 1}}>
                 {projects.data.map(project => {
                   return (
                     <Box sx={{ display: "flex" }} key={project.id}>
@@ -65,18 +68,27 @@ export default function Main(): ReactElement {
               </List>
           </>
       }
-      <h1>
-        Create project dev
-      </h1>
-      <form onSubmit={handleCreate}>
-        <Box sx={{ display: "flex", flexDirection: "column", maxWidth: "300px" }}>
-          <label htmlFor="title">Type title:</label>
-          <input type="text" value={title} onChange={(e: any) => setTitle(e.target.value)} />
-        </Box>
-        <button type="submit">
-          Create
-        </button>
-      </form>
+      <Box sx={{ flexGrow: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        <h1>
+          Create project dev
+        </h1>
+        <form onSubmit={handleCreate} style={{ maxWidth: "400px" }}>
+          <FormControl sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+            <TextField
+              type="text"
+              variant="standard"
+              value={title}
+              onChange={(e: any) => setTitle(e.target.value)}
+              label="Title:"
+              sx={{ maxWidth: "400px"}}
+              inputProps={{ maxLength: 20}}
+            />
+            <Button variant="contained" type="submit" sx={{ width: "fit-content", alignSelf: "center" }}>
+              Create
+            </Button>
+          </FormControl>
+        </form>
+      </Box>
     </Container>
   )
 }
