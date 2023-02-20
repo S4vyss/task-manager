@@ -9,6 +9,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
+import Link from 'next/link';
 
 export default function Main(): ReactElement {
 
@@ -41,22 +42,28 @@ export default function Main(): ReactElement {
       {
         projects.data &&
           <>
-              <List component="nav" sx={{ flexGrow: 1}}>
+              <List component="nav" sx={{
+                flexGrow: 1,
+                maxWidth: "25%",
+              }}>
                 {projects.data.map(project => {
                   return (
-                    <Box sx={{ display: "flex" }} key={project.id}>
-                      <ListItemButton
-                        key={project.id}
-                        sx={{ maxWidth: "fit-content", display: "flex", gap: 1 }}
+                    <Box sx={{ display: "flex", justifyContent: "space-between" }} key={project.id}>
+                      <Link href={`/project/[id]`} as={`/project/${project.id}`}
+                            style={{ display: "flex", overflow: "hidden", alignItems: "center", width: "100%" }}
                       >
-                        <ListItemIcon sx={{ minWidth: "fit-content" }}>
-                          <AutoAwesomeMosaicIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={project.title} />
-                      </ListItemButton>
+                        <ListItemButton
+                          key={project.id}
+                          sx={{ display: "flex", alignItems: "center", gap: 1}}
+                        >
+                          <ListItemIcon sx={{ minWidth: "fit-content" }}>
+                            <AutoAwesomeMosaicIcon />
+                          </ListItemIcon>
+                          <ListItemText primary={project.title} style={{textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden"}} />
+                        </ListItemButton>
+                      </Link>
                       <ListItemButton
                         sx={{ maxWidth: "fit-content" }}
-
                       >
                         <ListItemIcon sx={{ minWidth: "fit-content" }} onClick={() => handleDelete(project.id)}>
                           <DeleteIcon />
@@ -68,26 +75,49 @@ export default function Main(): ReactElement {
               </List>
           </>
       }
-      <Box sx={{ flexGrow: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-        <h1>
-          Create project dev
-        </h1>
-        <form onSubmit={handleCreate} style={{ maxWidth: "400px" }}>
-          <FormControl sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-            <TextField
-              type="text"
-              variant="standard"
-              value={title}
-              onChange={(e: any) => setTitle(e.target.value)}
-              label="Title:"
-              sx={{ maxWidth: "400px"}}
-              inputProps={{ maxLength: 20}}
-            />
-            <Button variant="contained" type="submit" sx={{ width: "fit-content", alignSelf: "center" }}>
-              Create
-            </Button>
-          </FormControl>
-        </form>
+      <Box sx={{
+        flexGrow: 1,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}>
+        <Box sx={{
+          backgroundColor: "white",
+          padding: 6,
+          boxShadow: "0px 0px 25px 1px rgba(66, 68, 90, 1)",
+          borderRadius: 2
+        }}>
+          <h1 className="h1" style={{
+            fontFamily: "Roboto,Helvetica,Arial,sans-serif",
+            textTransform: "uppercase",
+            textAlign: "center",
+            margin: 16
+          }}>
+            Create project
+          </h1>
+          <form onSubmit={handleCreate} style={{ maxWidth: "400px" }}>
+            <FormControl sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 3,
+            }}>
+              <TextField
+                type="text"
+                variant="standard"
+                value={title}
+                onChange={(e: any) => setTitle(e.target.value)}
+                label="Title:"
+                sx={{ minWidth: "350px" }}
+                inputProps={{ maxLength: 20}}
+                required={true}
+              />
+              <Button variant="contained" type="submit" sx={{ width: "fit-content", alignSelf: "center" }}>
+                Create
+              </Button>
+            </FormControl>
+          </form>
+        </Box>
       </Box>
     </Container>
   )

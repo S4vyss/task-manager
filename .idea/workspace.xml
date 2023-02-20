@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="changed logo">
+    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="styling">
+      <change afterPath="$PROJECT_DIR$/src/pages/project/[id].tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/Main.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.module.css" afterDir="false" />
@@ -64,7 +65,14 @@
       <workItem from="1675698361238" duration="3000" />
       <workItem from="1675698435329" duration="462000" />
       <workItem from="1675955642713" duration="2246000" />
-      <workItem from="1676124484169" duration="3444000" />
+      <workItem from="1676124484169" duration="3863000" />
+      <workItem from="1676129571221" duration="597000" />
+      <workItem from="1676134484722" duration="280000" />
+      <workItem from="1676399147737" duration="803000" />
+      <workItem from="1676472413166" duration="1296000" />
+      <workItem from="1676820598518" duration="2533000" />
+      <workItem from="1676832177780" duration="1116000" />
+      <workItem from="1676894318375" duration="4703000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1672673701029</created>
@@ -122,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675960073419</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="styling">
+      <created>1676128980219</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676128980219</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +162,7 @@
     <MESSAGE value="little styling" />
     <MESSAGE value="added form for creating projects" />
     <MESSAGE value="changed logo" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed logo" />
+    <MESSAGE value="styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="styling" />
   </component>
 </project>

@@ -1,7 +1,6 @@
 import styles from "./index.module.css";
 import { type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import { useSession } from "next-auth/react";
 import ResponsiveAppBar from "../components/header/AppBar";
 import Main from "../components/main/Main";
