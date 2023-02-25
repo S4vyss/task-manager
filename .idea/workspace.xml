@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="styling">
-      <change afterPath="$PROJECT_DIR$/src/pages/project/[id].tsx" afterDir="false" />
+    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="created dynamic routes for projects">
+      <change afterPath="$PROJECT_DIR$/src/components/main/Project.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/main/ProjectInput.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/project/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/[id].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/trpc/router/projectsRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/trpc/router/projectsRouter.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +75,12 @@
       <workItem from="1676472413166" duration="1296000" />
       <workItem from="1676820598518" duration="2533000" />
       <workItem from="1676832177780" duration="1116000" />
-      <workItem from="1676894318375" duration="4703000" />
+      <workItem from="1676894318375" duration="5422000" />
+      <workItem from="1677078567979" duration="1239000" />
+      <workItem from="1677255834395" duration="56000" />
+      <workItem from="1677316855228" duration="1078000" />
+      <workItem from="1677317958496" duration="1091000" />
+      <workItem from="1677319073172" duration="1666000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1672673701029</created>
@@ -137,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676128980219</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="created dynamic routes for projects">
+      <created>1676899369430</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676899369430</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +178,7 @@
     <MESSAGE value="added form for creating projects" />
     <MESSAGE value="changed logo" />
     <MESSAGE value="styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="styling" />
+    <MESSAGE value="created dynamic routes for projects" />
+    <option name="LAST_COMMIT_MESSAGE" value="created dynamic routes for projects" />
   </component>
 </project>

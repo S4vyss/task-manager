@@ -56,14 +56,25 @@ model User {
   accounts      Account[]
   sessions      Session[]
   projects      Project[]
+  members       Member[]
 }
 
 model Project {
-  id     String  @id @default(cuid())
-  title  String
-  User   User   @relation(fields: [userId], references: [id])
-  userId String
+  id      String    @id @default(cuid())
+  title   String
+  owner   User      @relation(fields: [userId], references: [id])
+  userId  String
+  members Member[]
 }
+
+model Member {
+  id        String  @id @default(cuid())
+  project   Project @relation(fields: [projectId], references: [id])
+  projectId String
+  user      User    @relation(fields: [userId], references: [id])
+  userId    String
+}
+
 
 model VerificationToken {
   identifier String

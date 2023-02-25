@@ -8,8 +8,8 @@ export const projectsRouter = router({
     .query(({ input, ctx }) => {
       return ctx.prisma.project.findMany({
         where: {
-          User: {
-            id: input,
+          owner: {
+            id: input
           }
         }
       })
@@ -23,7 +23,7 @@ export const projectsRouter = router({
       return ctx.prisma.project.create({
         data: {
           title: input.title,
-          User: {
+          owner: {
             connect: {
               id: input.userId
             }
