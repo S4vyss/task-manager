@@ -17,12 +17,13 @@ export default function ProjectInput(props: Props): ReactElement {
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
-      alignItems: "center",
     }}>
       <Box sx={{
         backgroundColor: "white",
         padding: 6,
         boxShadow: "0px 0px 25px 1px rgba(66, 68, 90, 1)",
+        width: "fit-content",
+        height: "fit-content",
         borderRadius: 2
       }}>
         <h1 className="h1" style={{

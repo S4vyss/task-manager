@@ -13,7 +13,7 @@ interface Props {
 
 export default function Project(props: Props): ReactElement {
   return (
-    <Box sx={{ display: "flex", justifyContent: "space-between" }} key={props.id}>
+    <Box sx={{ display: "flex", justifyContent: "space-between", maxWidth: "65%" }} key={props.id}>
       <Link href={`/project/[id]`} as={`/project/${props.id}`}
             style={{ display: "flex", overflow: "hidden", alignItems: "center", width: "100%" }}
       >

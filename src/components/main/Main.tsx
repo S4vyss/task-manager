@@ -39,7 +39,7 @@ export default function Main(): ReactElement {
           <>
               <List component="nav" sx={{
                 flexGrow: 1,
-                maxWidth: "25%",
+                maxWidth: "40%",
               }}>
                 {projects.data.map(project => {
                   return (

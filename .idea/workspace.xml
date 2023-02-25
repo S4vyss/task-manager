@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="created dynamic routes for projects">
-      <change afterPath="$PROJECT_DIR$/src/components/main/Project.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/main/ProjectInput.tsx" afterDir="false" />
+    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="added type safety, created members model, deconstructed Main.tsx file.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/project/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/[id].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/trpc/router/projectsRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/trpc/router/projectsRouter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/Project.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/Project.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/ProjectInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/ProjectInput.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +77,7 @@
       <workItem from="1677255834395" duration="56000" />
       <workItem from="1677316855228" duration="1078000" />
       <workItem from="1677317958496" duration="1091000" />
-      <workItem from="1677319073172" duration="1666000" />
+      <workItem from="1677319073172" duration="2822000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1672673701029</created>
@@ -152,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676899369430</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added type safety, created members model, deconstructed Main.tsx file.">
+      <created>1677320877303</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1677320877303</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +183,7 @@
     <MESSAGE value="changed logo" />
     <MESSAGE value="styling" />
     <MESSAGE value="created dynamic routes for projects" />
-    <option name="LAST_COMMIT_MESSAGE" value="created dynamic routes for projects" />
+    <MESSAGE value="added type safety, created members model, deconstructed Main.tsx file." />
+    <option name="LAST_COMMIT_MESSAGE" value="added type safety, created members model, deconstructed Main.tsx file." />
   </component>
 </project>
