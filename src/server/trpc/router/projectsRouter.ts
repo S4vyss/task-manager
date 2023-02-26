@@ -6,11 +6,28 @@ export const projectsRouter = router({
   getProjects: publicProcedure
     .input(z.optional(z.string()))
     .query(({ input, ctx }) => {
+
+      const userId = input ?? ctx.session?.user?.id;
+      if (!userId) {
+        throw new Error("User ID is missing");
+      }
+
       return ctx.prisma.project.findMany({
         where: {
-          owner: {
-            id: input
-          }
+          OR: [
+            {
+              owner: {
+                id: userId
+              },
+            },
+            {
+              members: {
+                some: {
+                  userId
+                }
+              }
+            }
+          ]
         }
       })
     }),
@@ -39,7 +56,37 @@ export const projectsRouter = router({
           id: input
         }
       })
+    }),
+  addMember: publicProcedure
+    .input(z.object({
+      email: z.string(),
+      projectId: z.string()
+    }))
+    .mutation(async ({ input, ctx }) => {
+      const { email, projectId } = input;
+
+      const user = await ctx.prisma.user.findUnique({
+        where: { email },
+        select: { id: true }
+      });
+
+      if (!user) {
+        throw new Error(`User with ${email} not found`);
+      }
+
+      return ctx.prisma.member.create({
+        data: {
+          user: {
+            connect: {
+              id: user.id // the ID of the user to add as a member
+            }
+          },
+          project: {
+            connect: {
+              id: projectId // the ID of the project to add the user as a member of
+            }
+          }
+        }
+      })
     })
 });
-
-// TODO: change delete and create project to be mutation not query

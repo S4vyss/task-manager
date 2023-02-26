@@ -47,7 +47,6 @@ export default function ProjectInput(props: Props): ReactElement {
               onChange={(e: ChangeEvent<HTMLInputElement>) => props.setTitle(e.target.value)}
               label="Title:"
               sx={{ minWidth: "350px" }}
-              inputProps={{ maxLength: 20}}
               required={true}
             />
             <Button variant="contained" type="submit" sx={{ width: "fit-content", alignSelf: "center" }}>

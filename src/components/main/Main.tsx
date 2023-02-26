@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import {List} from "@mui/material";
 import Project from "./Project";
 import ProjectInput from "./ProjectInput";
+import Button from "@mui/material/Button";
 
 export default function Main(): ReactElement {
 
@@ -20,11 +21,24 @@ export default function Main(): ReactElement {
   // create new project
   const createProject = trpc.project.createProject.useMutation().mutateAsync;
 
+  // add member
+  const addMember = trpc.project.addMember.useMutation().mutateAsync;
+
   const handleCreate = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await createProject({ title: title, userId: sessionData?.user?.id });
     await projects.refetch();
     setTitle("");
+  }
+
+  const handleAddMember = async () => {
+    try {
+      await addMember({ email: "kacperlesniewski4@gmail.com", projectId: "clejz065t000055xxmu5pd005"});
+    } catch (e) {
+      alert("You cannot perform that action, because the user is already a member of this project.");
+      console.log(e);
+    }
+    await projects.refetch();
   }
 
   const handleDelete = async (projectId: string) => {
@@ -50,6 +64,9 @@ export default function Main(): ReactElement {
           </>
       }
       <ProjectInput title={title} setTitle={setTitle} handleCreate={handleCreate} />
+      <Button variant={"contained"} sx={{ height: "fit-content"}} onClick={handleAddMember}>
+        Test button
+      </Button>
     </Container>
   )
 }
