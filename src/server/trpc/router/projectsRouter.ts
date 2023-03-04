@@ -88,5 +88,30 @@ export const projectsRouter = router({
           }
         }
       })
+    }),
+  findMember: publicProcedure
+    .input(z.object({
+      email: z.string()
+    }))
+    .query(async ({ input, ctx }) => {
+      const { email } = input;
+
+      const user = await ctx.prisma.user.findMany({
+        where: {
+          email: { startsWith: email },
+          NOT: { id: ctx.session?.user?.id }
+        },
+        select: {
+          name: true,
+          image: true,
+          email: true
+        }
+      });
+
+      if (!user) {
+        throw new Error(`User with ${input} not found`);
+      }
+
+      return user;
     })
 });
