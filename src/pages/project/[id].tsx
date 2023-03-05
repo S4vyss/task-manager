@@ -17,6 +17,9 @@ import {Button, Dialog, DialogTitle, ListItemAvatar, Typography} from "@mui/mate
 import TextField from "@mui/material/TextField";
 import {trpc} from "../../utils/trpc";
 import Avatar from "@mui/material/Avatar";
+import Menu from "@mui/material/Menu";
+import Container from "@mui/material/Container";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const drawerWidth = 240;
 
@@ -32,16 +35,38 @@ export default function ProjectPage() {
   const id = router.query.id as string;
 
   const [addMemberPopup, setAddMemberPopup] = useState<boolean>(false);
+  const [dropdown, setDropDown] = useState(null);
   const [userEmail, setUserEmail] = useState<string>("");
 
+  // finding member from addMember input
   const findMember = trpc.project.findMember.useQuery({ email: userEmail });
+
+    // Displaying members into member dropdown
+  const displayMembers = trpc.project.findMembersInProject.useQuery( { projectId: id }, { enabled: !!id });
+
+    // getting the owner of project
+  const getOwnerOfProject = trpc.project.getOwnerOfProject.useQuery({ projectId: id }, { enabled: !!id });
 
   // add member
   const addMember = trpc.project.addMember.useMutation().mutateAsync;
 
+  //delete member
+  const deleteMember = trpc.project.deleteMember.useMutation().mutateAsync;
+
+  const handleDeleteMember = async (email: string) => {
+    await deleteMember({ email: email, projectId: id});
+    await displayMembers.refetch();
+  }
+
   const handleAddMember = async (email: string) => {
     try {
-      await addMember({ email: email, projectId: id});
+      if (email === sessionData?.user?.email) {
+        alert("You cannot add the owner of this project as member");
+      } else {
+        await addMember({ email: email, projectId: id});
+        await displayMembers.refetch();
+        setAddMemberPopup(false);
+      }
     } catch (e) {
       alert("You cannot perform that action, because the user is already a member of this project.");
       console.log(e);
@@ -70,7 +95,8 @@ export default function ProjectPage() {
           <Toolbar />
           <Box sx={{ overflow: 'auto' }}>
             <List>
-              {['Add member +'].map((text, index) => (
+              { getOwnerOfProject?.data?.owner.id === sessionData?.user?.id &&
+                ['Add member +'].map((text, index) => (
                 <ListItem key={text} disablePadding>
                   <ListItemButton onClick={() => setAddMemberPopup(true)}>
                     <ListItemIcon>
@@ -80,6 +106,44 @@ export default function ProjectPage() {
                   </ListItemButton>
                 </ListItem>
               ))}
+              <ListItem disablePadding>
+                <ListItemButton
+                  onClick={(event: any) => setDropDown(event.currentTarget)}
+                  aria-controls={Boolean(dropdown) ? "basic-menu" : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={Boolean(dropdown) ? "true" : undefined}
+                >
+                  <ListItemIcon>
+                    <InboxIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Members" />
+                </ListItemButton>
+                <Menu
+                  id="basic-menu"
+                  anchorEl={dropdown}
+                  open={displayMembers.data && displayMembers.data.length > 0 ? Boolean(dropdown) : false}
+                  onClose={() => setDropDown(null)}
+                  MenuListProps={{
+                    'aria-labelledby': 'basic-button'
+                  }}
+                >
+                  {displayMembers.data &&
+                    displayMembers.data.map((member, i) => (
+                      <Container sx={{ display: "flex", gap: 1, outline: "none" }}>
+                        <Box key={i} sx={{ display: "flex", gap: 1.3, padding: 1, outline: "none", borderBottom: "1px solid lightgrey", width: "80%", alignItems: "center"}}>
+                          <Avatar src={member.image || ""} />
+                          <ListItemText primary={member.email} />
+                        </Box>
+                        <Button
+                          color="error"
+                          onClick={() => handleDeleteMember(member.email as string)}
+                        >
+                          <DeleteIcon color="secondary" />
+                        </Button>
+                      </Container>
+                    ))}
+                </Menu>
+              </ListItem>
             </List>
             <Divider />
             <List>
@@ -165,5 +229,3 @@ export default function ProjectPage() {
     </>
   )
 }
-
-//TODO: display members

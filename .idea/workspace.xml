@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="changed layout">
+    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="Created &quot;add member&quot; input">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/project/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/[id].tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/trpc/router/projectsRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/trpc/router/projectsRouter.ts" afterDir="false" />
     </list>
@@ -81,7 +82,10 @@
       <workItem from="1677328298699" duration="3665000" />
       <workItem from="1677353417962" duration="17000" />
       <workItem from="1677401548193" duration="1223000" />
-      <workItem from="1677942458104" duration="3989000" />
+      <workItem from="1677942458104" duration="5478000" />
+      <workItem from="1677954169989" duration="3584000" />
+      <workItem from="1678010802614" duration="5541000" />
+      <workItem from="1678028968117" duration="5064000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1672673701029</created>
@@ -167,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677322680710</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Created &quot;add member&quot; input">
+      <created>1677946738446</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1677946738446</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +207,7 @@
     <MESSAGE value="created dynamic routes for projects" />
     <MESSAGE value="added type safety, created members model, deconstructed Main.tsx file." />
     <MESSAGE value="changed layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed layout" />
+    <MESSAGE value="Created &quot;add member&quot; input" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created &quot;add member&quot; input" />
   </component>
 </project>

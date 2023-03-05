@@ -57,6 +57,41 @@ export const projectsRouter = router({
         }
       })
     }),
+  deleteMember: publicProcedure
+    .input(z.object({
+      projectId: z.string(),
+      email: z.string()
+    }))
+    .mutation(async ({ input, ctx }) => {
+      const user = await ctx.prisma.user.findUnique({
+        where: {
+          email: input.email
+        }
+      })
+
+      if (!user) {
+        throw new Error("no such user");
+      }
+
+      const member = await ctx.prisma.member.findUnique({
+        where: {
+          userId_projectId: {
+            projectId: input.projectId,
+            userId: user.id
+          }
+        }
+      })
+
+      if (!member) {
+        throw new Error("no such member");
+      }
+
+      return ctx.prisma.member.delete({
+        where: {
+          id: member.id
+        }
+      })
+    }),
   addMember: publicProcedure
     .input(z.object({
       email: z.string(),
@@ -99,7 +134,9 @@ export const projectsRouter = router({
       const user = await ctx.prisma.user.findMany({
         where: {
           email: { startsWith: email },
-          NOT: { id: ctx.session?.user?.id }
+          NOT: {
+            id: ctx.session?.user?.id,
+          }
         },
         select: {
           name: true,
@@ -113,5 +150,54 @@ export const projectsRouter = router({
       }
 
       return user;
-    })
+    }),
+  findMembersInProject: publicProcedure
+    .input(z.object({
+      projectId: z.optional(z.string())
+    }))
+    .query(async ({ input, ctx }) => {
+      const { projectId } = input;
+
+      const project = await ctx.prisma.project.findUnique({
+        where: { id: projectId }
+      });
+
+      if (!project) {
+        throw new Error("No project with that id");
+      }
+
+      const members = await ctx.prisma.member.findMany({
+        where: { projectId },
+        select: {
+          user: {
+            select: {
+              email: true,
+              image: true,
+            }
+          }
+        }
+      });
+
+      return members.map(({ user }) => user);
+    }),
+    getOwnerOfProject: publicProcedure
+      .input(z.object({
+        projectId: z.string()
+      }))
+      .query(({ input, ctx }) => {
+        const { projectId } = input;
+
+        return ctx.prisma.project.findUnique({
+          where: {
+            id: projectId
+          },
+          select: {
+            owner: {
+              select: {
+                id: true
+              }
+            }
+          }
+        })
+      })
 });

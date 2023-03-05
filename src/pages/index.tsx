@@ -4,9 +4,24 @@ import Head from "next/head";
 import { useSession } from "next-auth/react";
 import ResponsiveAppBar from "../components/header/AppBar";
 import Main from "../components/main/Main";
+import {useEffect, useState} from "react";
+import {CircularProgress} from "@mui/material";
 
 const Home: NextPage = () => {
   const { data: sessionData } = useSession();
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (document.readyState === "complete") {
+      setLoading(false)
+    }
+  }, []);
+
+  if (loading) {
+    return <CircularProgress />
+  }
+  
 
   return (
     <>
