@@ -134,12 +134,14 @@ export default function ProjectPage() {
                           <Avatar src={member.image || ""} />
                           <ListItemText primary={member.email} />
                         </Box>
-                        <Button
-                          color="error"
-                          onClick={() => handleDeleteMember(member.email as string)}
-                        >
-                          <DeleteIcon color="secondary" />
-                        </Button>
+                        { getOwnerOfProject?.data?.owner.id === sessionData?.user?.id &&
+                          <Button
+                            color="error"
+                            onClick={() => handleDeleteMember(member.email as string)}
+                          >
+                            <DeleteIcon color="secondary" />
+                          </Button>
+                        }
                       </Container>
                     ))}
                 </Menu>

@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="Created &quot;add member&quot; input">
+    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="completed display of members, added delete member button, resolved issue #7">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/project/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/[id].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/trpc/router/projectsRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/trpc/router/projectsRouter.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +82,7 @@
       <workItem from="1677942458104" duration="5478000" />
       <workItem from="1677954169989" duration="3584000" />
       <workItem from="1678010802614" duration="5541000" />
-      <workItem from="1678028968117" duration="5064000" />
+      <workItem from="1678028968117" duration="6390000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1672673701029</created>
@@ -178,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677946738446</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="completed display of members, added delete member button, resolved issue #7">
+      <created>1678034259780</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1678034259780</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +212,7 @@
     <MESSAGE value="added type safety, created members model, deconstructed Main.tsx file." />
     <MESSAGE value="changed layout" />
     <MESSAGE value="Created &quot;add member&quot; input" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created &quot;add member&quot; input" />
+    <MESSAGE value="completed display of members, added delete member button, resolved issue #7" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed display of members, added delete member button, resolved issue #7" />
   </component>
 </project>
