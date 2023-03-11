@@ -48,6 +48,25 @@ export const projectsRouter = router({
         }
       })
     }),
+  createTable: publicProcedure
+    .input(z.object({
+      title: z.string(),
+      description: z.optional(z.string()),
+      projectId: z.string()
+    }))
+    .mutation(({ input, ctx }) => {
+      return ctx.prisma.table.create({
+        data: {
+          title: input.title,
+          description: input.description,
+          project: {
+            connect: {
+              id: input.projectId
+            }
+          }
+        }
+      })
+    }),
   deleteProject: publicProcedure
     .input(z.string())
     .mutation(({ input, ctx}) => {

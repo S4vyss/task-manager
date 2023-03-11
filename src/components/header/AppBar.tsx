@@ -61,7 +61,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" style={{ zIndex: 1 }}>
+    <AppBar position="static" style={{ zIndex: 2 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography

@@ -65,6 +65,15 @@ model Project {
   owner   User      @relation(fields: [userId], references: [id])
   userId  String
   members Member[]
+  tables Table[]
+}
+
+model Table {
+  id String @id @default(cuid())
+  title String
+  description String?
+  project Project @relation(fields: [projectId], references: [id])
+  projectId String
 }
 
 model Member {

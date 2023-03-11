@@ -20,6 +20,8 @@ import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
 import Container from "@mui/material/Container";
 import DeleteIcon from '@mui/icons-material/Delete';
+import styles from "./dynamic.module.css";
+import ProjectTable from "../../components/main/ProjectTable";
 
 const drawerWidth = 240;
 
@@ -79,155 +81,161 @@ export default function ProjectPage() {
 
   return (
     <>
-      <ResponsiveAppBar  />
-      <section style={{
-        zIndex: -100,
-        position: "absolute"
-      }}>
-        <Drawer
-          variant="permanent"
-          sx={{
-            width: drawerWidth,
-            flexShrink: 0,
-            [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
-          }}
-        >
-          <Toolbar />
-          <Box sx={{ overflow: 'auto' }}>
-            <List>
-              { getOwnerOfProject?.data?.owner.id === sessionData?.user?.id &&
-                ['Add member +'].map((text, index) => (
-                <ListItem key={text} disablePadding>
-                  <ListItemButton onClick={() => setAddMemberPopup(true)}>
-                    <ListItemIcon>
-                      {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                    </ListItemIcon>
-                    <ListItemText primary={text} />
-                  </ListItemButton>
-                </ListItem>
-              ))}
-              <ListItem disablePadding>
-                <ListItemButton
-                  onClick={(event: any) => setDropDown(event.currentTarget)}
-                  aria-controls={Boolean(dropdown) ? "basic-menu" : undefined}
-                  aria-haspopup="true"
-                  aria-expanded={Boolean(dropdown) ? "true" : undefined}
-                >
-                  <ListItemIcon>
-                    <InboxIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="Members" />
-                </ListItemButton>
-                <Menu
-                  id="basic-menu"
-                  anchorEl={dropdown}
-                  open={displayMembers.data && displayMembers.data.length > 0 ? Boolean(dropdown) : false}
-                  onClose={() => setDropDown(null)}
-                  MenuListProps={{
-                    'aria-labelledby': 'basic-button'
-                  }}
-                >
-                  {displayMembers.data &&
-                    displayMembers.data.map((member, i) => (
-                      <Container sx={{ display: "flex", gap: 1, outline: "none" }}>
-                        <Box key={i} sx={{ display: "flex", gap: 1.3, padding: 1, outline: "none", borderBottom: "1px solid lightgrey", width: "80%", alignItems: "center"}}>
-                          <Avatar src={member.image || ""} />
-                          <ListItemText primary={member.email} />
-                        </Box>
-                        { getOwnerOfProject?.data?.owner.id === sessionData?.user?.id &&
-                          <Button
-                            color="error"
-                            onClick={() => handleDeleteMember(member.email as string)}
-                          >
-                            <DeleteIcon color="secondary" />
-                          </Button>
-                        }
-                      </Container>
-                    ))}
-                </Menu>
-              </ListItem>
-            </List>
-            <Divider />
-            <List>
-              {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                <ListItem key={text} disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                    </ListItemIcon>
-                    <ListItemText primary={text} />
-                  </ListItemButton>
-                </ListItem>
-              ))}
-            </List>
-          </Box>
-        </Drawer>
-      </section>
-      <Box>
-        <Dialog
-          open={addMemberPopup}
-          fullWidth={true}
-        >
-          <DialogTitle
-            textAlign="center"
+      <section className={styles.route}>
+        <ResponsiveAppBar />
+        <section style={{
+          zIndex: -1,
+          position: "absolute",
+        }}>
+          <Drawer
+            variant="permanent"
+            sx={{
+              width: drawerWidth,
+              flexShrink: 0,
+              [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+            }}
           >
-            <Typography variant="h4">
-              Add Member
-            </Typography>
-            <Button
-              onClick={() => setAddMemberPopup(false)}
-              sx={{
-                width: "fit-content",
-                position: "absolute",
-                top: 0,
-                right: 0,
-                margin: 2,
-                background: "crimson",
-                color: "white",
-                "&:hover": {
-                  background: "crimson",
-                }
-              }}
-              variant="contained"
-            >
-              X
-            </Button>
-          </DialogTitle>
-          <Box sx={{
-            padding: 4,
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-          }}>
-            <TextField
-              type="text"
-              variant="standard"
-              value={userEmail}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => setUserEmail(e.target.value)}
-              label="Email:"
-              sx={{ minWidth: "350px" }}
-              required={true}
-              autoComplete="off"
-            />
-            <Box minHeight="100px">
-              {
-                userEmail.length > 0 && findMember.data && findMember.data.map((user: User) => {
-                  return (
-                    <ListItem disableGutters>
-                      <ListItemButton onClick={() => handleAddMember(user.email || "")}>
-                        <ListItemAvatar>
-                          <Avatar src={user.image || "" } />
-                        </ListItemAvatar>
-                        <ListItemText primary={user.name} />
+            <Toolbar />
+            <Box sx={{ overflow: 'auto' }}>
+              <List>
+                { getOwnerOfProject?.data?.owner.id === sessionData?.user?.id &&
+                  ['Add member +'].map((text, index) => (
+                    <ListItem key={text} disablePadding>
+                      <ListItemButton onClick={() => setAddMemberPopup(true)}>
+                        <ListItemIcon>
+                          {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                        </ListItemIcon>
+                        <ListItemText primary={text} />
                       </ListItemButton>
                     </ListItem>
-                  )
-                })
-              }
+                  ))}
+                <ListItem disablePadding>
+                  <ListItemButton
+                    onClick={(event: any) => setDropDown(event.currentTarget)}
+                    aria-controls={Boolean(dropdown) ? "basic-menu" : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={Boolean(dropdown) ? "true" : undefined}
+                  >
+                    <ListItemIcon>
+                      <InboxIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Members" />
+                  </ListItemButton>
+                  <Menu
+                    id="basic-menu"
+                    anchorEl={dropdown}
+                    open={displayMembers.data && displayMembers.data.length > 0 ? Boolean(dropdown) : false}
+                    onClose={() => setDropDown(null)}
+                    MenuListProps={{
+                      'aria-labelledby': 'basic-button'
+                    }}
+                  >
+                    {displayMembers.data &&
+                      displayMembers.data.map((member, i) => (
+                        <Container key={i++} sx={{ display: "flex", gap: 1, outline: "none" }}>
+                          <Box key={i} sx={{ display: "flex", gap: 1.3, padding: 1, outline: "none", borderBottom: "1px solid lightgrey", width: "100%", alignItems: "center"}}>
+                            <Avatar src={member.image || ""} />
+                            <ListItemText primary={member.email} />
+                          </Box>
+                          { getOwnerOfProject?.data?.owner.id === sessionData?.user?.id &&
+                              <Button
+                                  color="error"
+                                  onClick={() => handleDeleteMember(member.email as string)}
+                              >
+                                  <DeleteIcon color="secondary" />
+                              </Button>
+                          }
+                        </Container>
+                      ))}
+                  </Menu>
+                </ListItem>
+              </List>
+              <Divider />
+              <List>
+                {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                  <ListItem key={text} disablePadding>
+                    <ListItemButton>
+                      <ListItemIcon>
+                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                      </ListItemIcon>
+                      <ListItemText primary={text} />
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
             </Box>
-          </Box>
-        </Dialog>
-      </Box>
+          </Drawer>
+        </section>
+        <Box>
+          <Dialog
+            open={addMemberPopup}
+            fullWidth={true}
+          >
+            <DialogTitle
+              textAlign="center"
+            >
+              <Typography variant="h4">
+                Add Member
+              </Typography>
+              <Button
+                onClick={() => setAddMemberPopup(false)}
+                sx={{
+                  width: "fit-content",
+                  position: "absolute",
+                  top: 0,
+                  right: 0,
+                  margin: 2,
+                  background: "crimson",
+                  color: "white",
+                  "&:hover": {
+                    background: "crimson",
+                  }
+                }}
+                variant="contained"
+              >
+                X
+              </Button>
+            </DialogTitle>
+            <Box sx={{
+              padding: 4,
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "column",
+            }}>
+              <TextField
+                type="text"
+                variant="standard"
+                value={userEmail}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => setUserEmail(e.target.value)}
+                label="Email:"
+                sx={{ minWidth: "350px" }}
+                required={true}
+                autoComplete="off"
+              />
+              <Box minHeight="100px">
+                {
+                  userEmail.length > 0 && findMember.data && findMember.data.map((user: User) => {
+                    return (
+                      <ListItem disableGutters>
+                        <ListItemButton onClick={() => handleAddMember(user.email || "")}>
+                          <ListItemAvatar>
+                            <Avatar src={user.image || "" } />
+                          </ListItemAvatar>
+                          <ListItemText primary={user.name} />
+                        </ListItemButton>
+                      </ListItem>
+                    )
+                  })
+                }
+              </Box>
+            </Box>
+          </Dialog>
+        </Box>
+        <Box className={styles.tables}>
+          <ProjectTable />
+        </Box>
+      </section>
     </>
+
   )
 }

@@ -4,14 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="completed display of members, added delete member button, resolved issue #7">
+    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="blocked members (who arent owners) from deleting other members">
+      <change afterPath="$PROJECT_DIR$/src/components/main/ProjectTable.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/project/dynamic.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/AppBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/AppBar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/project/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/[id].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/trpc/router/projectsRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/trpc/router/projectsRouter.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,6 +41,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -36,6 +49,7 @@
     &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;,
     &quot;ts.external.directory.path&quot;: &quot;\\\\wsl$\\Ubuntu\\home\\s4vyss\\Projekty\\fullstack\\task-manager\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -82,7 +96,12 @@
       <workItem from="1677942458104" duration="5478000" />
       <workItem from="1677954169989" duration="3584000" />
       <workItem from="1678010802614" duration="5541000" />
-      <workItem from="1678028968117" duration="6390000" />
+      <workItem from="1678028968117" duration="6732000" />
+      <workItem from="1678039379191" duration="100000" />
+      <workItem from="1678117061047" duration="1079000" />
+      <workItem from="1678526958506" duration="1101000" />
+      <workItem from="1678528084756" duration="142000" />
+      <workItem from="1678528303455" duration="6500000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1672673701029</created>
@@ -182,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678034259780</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="blocked members (who arent owners) from deleting other members">
+      <created>1678038641107</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1678038641107</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +239,7 @@
     <MESSAGE value="changed layout" />
     <MESSAGE value="Created &quot;add member&quot; input" />
     <MESSAGE value="completed display of members, added delete member button, resolved issue #7" />
-    <option name="LAST_COMMIT_MESSAGE" value="completed display of members, added delete member button, resolved issue #7" />
+    <MESSAGE value="blocked members (who arent owners) from deleting other members" />
+    <option name="LAST_COMMIT_MESSAGE" value="blocked members (who arent owners) from deleting other members" />
   </component>
 </project>
