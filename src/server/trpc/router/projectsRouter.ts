@@ -50,7 +50,7 @@ export const projectsRouter = router({
     }),
   createTable: publicProcedure
     .input(z.object({
-      title: z.string(),
+      title: z.optional(z.string()),
       description: z.optional(z.string()),
       projectId: z.string()
     }))
@@ -64,6 +64,48 @@ export const projectsRouter = router({
               id: input.projectId
             }
           }
+        }
+      })
+    }),
+  updateTable: publicProcedure
+    .input(z.object({
+      tableId: z.string(),
+      title: z.string().optional(),
+      description: z.string().optional(),
+    }))
+    .mutation(({ input, ctx }) => {
+      return ctx.prisma.table.update({
+        where: {
+          id: input.tableId,
+        },
+        data: {
+          title: input.title,
+          description: input.description,
+        }
+      });
+    }),
+  getTables: publicProcedure
+    .input(z.object({
+      projectId: z.string()
+    }))
+    .query(({ input, ctx }) => {
+      return ctx.prisma.table.findMany({
+        where: {
+          projectId: input.projectId
+        },
+        select: {
+          title: true,
+          description: true,
+          id: true
+        }
+      })
+    }),
+  deleteTable: publicProcedure
+    .input(z.string())
+    .mutation(({ input, ctx }) => {
+      return ctx.prisma.table.delete({
+        where: {
+          id: input
         }
       })
     }),

@@ -232,7 +232,7 @@ export default function ProjectPage() {
           </Dialog>
         </Box>
         <Box className={styles.tables}>
-          <ProjectTable />
+          <ProjectTable projectId={id} />
         </Box>
       </section>
     </>
