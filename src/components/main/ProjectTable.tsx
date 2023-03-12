@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import {trpc} from "../../utils/trpc";
 import EditIcon from '@mui/icons-material/Edit';
+import ReactMarkdown from "react-markdown";
 
 export default function ProjectTable(props: { projectId: string }): ReactElement {
 
@@ -79,7 +80,7 @@ function Card(props: CardProps): ReactElement {
     <Box
       sx={{
         background: "#EBECF0",
-        width: "240px",
+        width: "300px",
         padding: 2,
         height: "fit-content",
         paddingBottom: disabled ? 2 : 1,
@@ -91,7 +92,9 @@ function Card(props: CardProps): ReactElement {
             props.title &&
               !disabled &&
               <Typography sx={{ background: "white", padding: "10px", display: "flex", justifyContent: "space-between"}}>
-                {props.title}
+                <ReactMarkdown>
+                  {props.title}
+                </ReactMarkdown>
                   <Button
                       sx={{ padding: 0}}
                       style={{ minWidth: "40px" }}
@@ -130,11 +133,13 @@ function Card(props: CardProps): ReactElement {
               <Typography
                 sx={{
                   background: "white",
-                  padding: "14px",
+                  paddingLeft: "20px",
                   minHeight: "150px"
                 }}
               >
-                {props.description}
+                  <ReactMarkdown>
+                    {props.description}
+                  </ReactMarkdown>
               </Typography>
           }
           {

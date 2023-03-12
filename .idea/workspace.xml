@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="new table model and ui for creating tables">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_4_2023_10_59_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_4_2023_10_59_AM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="tables done. Initial project idea done">
+      <change afterPath="$PROJECT_DIR$/prisma/migrations/20230312095243_title_in_table_optional/migration.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/ProjectTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/ProjectTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/project/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/[id].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/trpc/router/projectsRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/trpc/router/projectsRouter.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +102,8 @@
       <workItem from="1678528303455" duration="6893000" />
       <workItem from="1678550509801" duration="2000" />
       <workItem from="1678611324319" duration="3282000" />
-      <workItem from="1678614827061" duration="9961000" />
+      <workItem from="1678614827061" duration="10614000" />
+      <workItem from="1678641408620" duration="963000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1672673701029</created>
@@ -218,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678535186821</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="tables done. Initial project idea done">
+      <created>1678625773987</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1678625773987</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +257,7 @@
     <MESSAGE value="completed display of members, added delete member button, resolved issue #7" />
     <MESSAGE value="blocked members (who arent owners) from deleting other members" />
     <MESSAGE value="new table model and ui for creating tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="new table model and ui for creating tables" />
+    <MESSAGE value="tables done. Initial project idea done" />
+    <option name="LAST_COMMIT_MESSAGE" value="tables done. Initial project idea done" />
   </component>
 </project>
