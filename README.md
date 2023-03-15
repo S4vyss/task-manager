@@ -26,6 +26,7 @@ After that you gonna have to create your  **.env**  file and fill in the require
 <hr>
 Your  **.env**  file should look like that:
 
+
 ```
  DATABASE_URL=file:./db.sqlite  
  NEXTAUTH_URL=http://localhost:3000 
