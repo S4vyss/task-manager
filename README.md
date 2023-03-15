@@ -2,7 +2,7 @@
 
 Task Manager is a fullstack application made by me. S4vyss. It consists of main page, login page and project page. 
 <hr>
-Essentialy, its [trello](https://trello.com/)
+Essentialy,its [trello](https://trello.com/)
 
 <hr>
 
@@ -24,7 +24,7 @@ npm install
 
 After that you gonna have to create your  **.env**  file and fill in the required variables from  **.env.example** 
 <hr>
-Your **.env** file should look like that:
+Your  **.env**  file should look like that:
 
 ```
  DATABASE_URL=file:./db.sqlite  
