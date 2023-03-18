@@ -1,0 +1,28 @@
+.section {
+    width: 100%;
+    height: 200vh;
+    position: absolute;
+    z-index: 1;
+    scrollbar-width: none;
+}
+
+.img {
+    width: 70%;
+    height: 70%;
+}
+
+.section article {
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section .articleOne {
+    background-image: url("../../assets/layered-waves-haikei.svg");
+}
+
+.section .articleTwo {
+    background-image: url("../../assets/second-waves.svg");
+}

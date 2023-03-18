@@ -61,7 +61,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" style={{ zIndex: 2 }}>
+    <AppBar position={ sessionData ? "static" : "absolute"} style={{ zIndex: 100 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
