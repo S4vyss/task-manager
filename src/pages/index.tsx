@@ -6,6 +6,7 @@ import ResponsiveAppBar from "../components/header/AppBar";
 import Main from "../components/main/Main";
 import {useEffect, useState} from "react";
 import {CircularProgress} from "@mui/material";
+import LandPage from "../components/landpage/LandPage";
 
 const Home: NextPage = () => {
   const { data: sessionData } = useSession();
@@ -35,8 +36,11 @@ const Home: NextPage = () => {
         <header>
           <ResponsiveAppBar />
         </header>
-        {sessionData &&
+        {sessionData
+            ?
             <Main />
+             :
+            <LandPage />
         }
       </main>
     </>
