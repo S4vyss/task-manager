@@ -133,7 +133,7 @@ function Card(props: CardProps): ReactElement {
               <Typography
                 sx={{
                   background: "white",
-                  paddingLeft: "20px",
+                  padding: "10px",
                   minHeight: "150px"
                 }}
               >
