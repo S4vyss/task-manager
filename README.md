@@ -2,7 +2,15 @@
 
 Task Manager is a fullstack application made by me. S4vyss. It consists of main page, login page and project page. 
 <hr>
-Essentialy,its [trello](https://trello.com)
+
+## Tech Stack
+
+- Trpc
+- Next.js
+- Material UI
+- MongoDB Atlas
+- Typescript
+- Prisma
 
 <hr>
 
