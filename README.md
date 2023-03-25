@@ -30,6 +30,20 @@ Then in your project directory:
 npm install
 ``
 
+Then you would have to open your ``prisma.schema`` and change datasource:
+
+```
+
+ datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+```
+
+Also delete the ``@map(_id)`` inside each id column and ``@id @map(_id)`` inside ``VerificationToken`` model
+
+
 After that you gonna have to create your  **.env**  file and fill in the required variables from  **.env.example** 
 <hr>
 Your  **.env**  file should look like that:
