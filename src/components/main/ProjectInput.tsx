@@ -24,13 +24,16 @@ export default function ProjectInput(props: Props): ReactElement {
         boxShadow: "0px 0px 25px 1px rgba(66, 68, 90, 1)",
         width: "fit-content",
         height: "fit-content",
-        borderRadius: 2
+        borderRadius: 2,
+        "@media (max-width: 600px)": {
+          padding: 2
+        }
       }}>
         <h1 className="h1" style={{
           fontFamily: "Roboto,Helvetica,Arial,sans-serif",
           textTransform: "uppercase",
           textAlign: "center",
-          margin: 16
+          margin: 16,
         }}>
           Create project
         </h1>

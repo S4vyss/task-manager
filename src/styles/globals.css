@@ -4,6 +4,15 @@ body {
   margin: 0;
 }
 
+@media screen and (max-width: 600px) {
+    .h1 {
+        font-size: 25px;
+    }
+    .containerMain {
+        flex: 0.5 1!important;
+    }
+}
+
 html::-webkit-scrollbar {
     display: none;
 }
@@ -21,4 +30,8 @@ a {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+ul {
+    list-style: none;
 }

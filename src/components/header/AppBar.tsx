@@ -134,7 +134,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            <AutoAwesomeMosaicIcon fontSize="large" />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, gap: "1em" }}>
             {pages.map((page) => (

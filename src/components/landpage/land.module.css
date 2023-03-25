@@ -2,7 +2,7 @@
     width: 100%;
     height: 200vh;
     position: absolute;
-    z-index: 1;
+    z-index: 10;
     scrollbar-width: none;
 }
 
@@ -11,16 +11,29 @@
     height: 70%;
 }
 
+@media screen and (max-width: 600px) {
+    .img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
 .section article {
     height: 100vh;
     background-size: cover;
+}
+
+.section .articleOne {
+    background-image: url("../../assets/layered-waves-haikei.svg");
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.section .articleOne {
-    background-image: url("../../assets/layered-waves-haikei.svg");
+@media screen and (max-width: 600px) {
+    .section .articleOne {
+        flex-direction: column;
+    }
 }
 
 .section .articleTwo {

@@ -33,7 +33,11 @@ export default function Main(): ReactElement {
   }
 
   return (
-    <Container sx={{ marginLeft: 0, display: "flex", flexWrap: "wrap"}} style={{ maxWidth: "100%", flex: "1 1 auto"}}>
+    <Container
+      sx={{ marginLeft: 0, display: "flex", flexWrap: "wrap"}}
+      style={{ maxWidth: "100%", flex: "1 1 auto"}}
+      className="containerMain"
+    >
       {
         projects.data &&
           <>

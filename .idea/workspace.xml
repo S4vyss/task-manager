@@ -4,12 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="tables done. Initial project idea done">
-      <change afterPath="$PROJECT_DIR$/prisma/migrations/20230312095243_title_in_table_optional/migration.sql" afterDir="false" />
+    <list default="true" id="097d386d-f2f8-4cce-9d98-555e7261c246" name="Changes" comment="changed styles">
+      <change afterPath="$PROJECT_DIR$/src/components/landpage/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_1_2023_8_54_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20230102153652_initial_migration/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20230113132741_project_model/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20230225092227_member_model/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20230226090706_resolving_error_with_cascade_delete/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20230226090914_user_should_not_be_able_to_add_2_same_members/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20230311094336_table_model/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20230311094940_table_desc_optional/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20230312095243_title_in_table_optional/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/migration_lock.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/AppBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/AppBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landpage/LandPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landpage/LandPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landpage/land.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landpage/land.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/Project.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/Project.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/ProjectInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/ProjectInput.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/main/ProjectTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/ProjectTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +122,10 @@
       <workItem from="1678550509801" duration="2000" />
       <workItem from="1678611324319" duration="3282000" />
       <workItem from="1678614827061" duration="10614000" />
-      <workItem from="1678641408620" duration="963000" />
+      <workItem from="1678641408620" duration="1391000" />
+      <workItem from="1679133706864" duration="2004000" />
+      <workItem from="1679136769642" duration="5861000" />
+      <workItem from="1679736164755" duration="10665000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1672673701029</created>
@@ -224,7 +246,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678625773987</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added markdown styling to tables">
+      <created>1678642502959</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1678642502959</updated>
+    </task>
+    <task id="LOCAL-00019" summary="changed styles">
+      <created>1679133763783</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1679133763783</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,6 +294,8 @@
     <MESSAGE value="blocked members (who arent owners) from deleting other members" />
     <MESSAGE value="new table model and ui for creating tables" />
     <MESSAGE value="tables done. Initial project idea done" />
-    <option name="LAST_COMMIT_MESSAGE" value="tables done. Initial project idea done" />
+    <MESSAGE value="added markdown styling to tables" />
+    <MESSAGE value="changed styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed styles" />
   </component>
 </project>

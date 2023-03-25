@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import {trpc} from "../../utils/trpc";
 import EditIcon from '@mui/icons-material/Edit';
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export default function ProjectTable(props: { projectId: string }): ReactElement {
 
@@ -137,7 +138,7 @@ function Card(props: CardProps): ReactElement {
                   minHeight: "150px"
                 }}
               >
-                  <ReactMarkdown>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]} disallowedElements={["table", "video", "img"]}>
                     {props.description}
                   </ReactMarkdown>
               </Typography>
